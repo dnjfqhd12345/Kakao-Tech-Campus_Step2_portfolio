@@ -94,7 +94,7 @@ public class OrderRestControllerTest extends MyRestDoc {
         resultActions.andExpect(jsonPath("$.response.products[1].items[0].optionName").value("선택02_바른곡물효소누룽지맛 6박스"));
         resultActions.andExpect(jsonPath("$.response.products[1].items[0].quantity").value("5"));
         resultActions.andExpect(jsonPath("$.response.products[1].items[0].price").value("250000"));
-        resultActions.andExpect(jsonPath("$.response.totalPrice").value("1510900"));
+        resultActions.andExpect(jsonPath("$.response.totalPrice").value("310900"));
         resultActions.andExpect(jsonPath("$.error").value(IsNull.nullValue()));
 
         resultActions.andDo(MockMvcResultHandlers.print()).andDo(document);
@@ -134,7 +134,7 @@ public class OrderRestControllerTest extends MyRestDoc {
         resultActions.andExpect(jsonPath("$.response.products[1].items[0].optionName").value("선택02_바른곡물효소누룽지맛 6박스"));
         resultActions.andExpect(jsonPath("$.response.products[1].items[0].quantity").value("5"));
         resultActions.andExpect(jsonPath("$.response.products[1].items[0].price").value("250000"));
-        resultActions.andExpect(jsonPath("$.response.totalPrice").value("1510900"));
+        resultActions.andExpect(jsonPath("$.response.totalPrice").value("310900"));
         resultActions.andExpect(jsonPath("$.error").value(IsNull.nullValue()));
         resultActions.andDo(MockMvcResultHandlers.print()).andDo(document);
 

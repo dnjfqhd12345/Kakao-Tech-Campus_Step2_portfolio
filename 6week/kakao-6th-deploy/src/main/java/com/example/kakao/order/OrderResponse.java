@@ -17,7 +17,7 @@ public class OrderResponse {
 
         private int id;
         private List<productDTO> products;
-        private int totalPrice;
+        private int totalPrice = 0;
 
 
 
@@ -26,7 +26,6 @@ public class OrderResponse {
             this.products = itemList.stream()
                     .map(item -> item.getOption().getProduct()).distinct()
                     .map(products -> new productDTO(products, itemList)).distinct().collect(Collectors.toList());
-            this.totalPrice = itemList.stream().mapToInt(item -> item.getPrice() * item.getQuantity()).sum();
         }
 
         @Getter
@@ -39,6 +38,7 @@ public class OrderResponse {
                 this.productName = product.getProductName();
                 for(Item item : itemList){
                     if(product.getId() == item.getOption().getProduct().getId()){
+                        totalPrice += item.getPrice();
                         System.out.println("아이템 담김\n");
                         items.add(new ItemsDTO(item));
                     }
